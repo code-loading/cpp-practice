@@ -3,6 +3,24 @@
 using std::cout;
 using std::cin;
 
+//double power(double, int);
+double power(double base, int exponent) {
+
+    double result = 1;
+
+    for (int i = 0; i < exponent; i++) {
+        result = result * base;
+    }
+
+    return result;
+}
+
+void print_pow(double base, int exponent) {
+
+    double myPower = power(base, exponent);
+    cout << base <<" raised to the power "<< exponent <<" is "<< myPower << ".\n";
+}
+
 int main()
 {
     /*
@@ -17,8 +35,14 @@ int main()
     cin >> base;
     cout << "What's your exponent?:" << std::endl;
     cin >> exponent;
-    double power = pow(base, exponent);
-    cout << power << std::endl;
+    cout<<std::endl;
+
+    print_pow(base, exponent);
+    print_pow(100, 4);
+    print_pow(4, 2);
+
+   
 
     system("pause>0");
 }
+
