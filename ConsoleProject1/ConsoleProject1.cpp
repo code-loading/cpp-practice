@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+
+/*
 struct User //default is public for the member values
 {
     std::string first_name;
@@ -11,6 +13,19 @@ struct User //default is public for the member values
 private:
     std::string status="Gold"; //assigned a default value
 };
+*/
+class User //default is private for the member values
+{
+    std::string status = "Gold"; //assigned a default value
+public:    
+    std::string first_name;
+    std::string last_name;
+    std::string get_status() {
+        return status;
+    }
+
+};
+
 
 int main()
 {
