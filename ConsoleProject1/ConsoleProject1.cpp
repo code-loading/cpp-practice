@@ -1,22 +1,26 @@
 #include <iostream>
 #include <string>
 #include "user.h"
+#include "teacher.h"
 
 
 int main()
 {
 
-    User user;
+ //   User user;
 
-    std::cin >> user;
+   // std::cin >> user;
     /*
     user.first_name = "Ehsan";
     user.last_name = "Ahmed";
     */
-    std::cout << user << std::endl;
+  //  std::cout << user << std::endl;
     //output_status(user);
 
-
+    Teacher teacher;
+    teacher.first_name = "dude";
+    std::cout << teacher.first_name << std::endl;
+    teacher.output();
 
 
 
