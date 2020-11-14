@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 
+
 /*
 struct User //default is public for the member values
 {
@@ -75,13 +76,44 @@ int add_user_if_not_exist(std::vector<User> users, User user) {
     return users.size() - 1;
 }
 
+std::ostream& operator << (std::ostream& output, const User user)
+{
+    output << "First name: " << user.first_name << "\nLast name: " << user.last_name;
+    return output;
+}
+
+std::istream& operator >> (std::istream& input, User &user)
+{
+    input >> user.first_name >> user.last_name;
+    return input;
+}
+
 int main()
 {
+
+    User user;
+    std::cin >> user;
+    /*
+    user.first_name = "Ehsan";
+    user.last_name = "Ahmed";
+    */
+    std::cout << user << std::endl;
+
+
+
+
+
+
+
+
+
+
+    /*
     User user, user1, user2, user3, user4;
     std::cout << User::get_user_count() << std::endl;
     user.~User();
     std::cout << User::get_user_count() << std::endl;
-    
+    */
     
     /*
     User me;
