@@ -33,7 +33,7 @@ private:
     {
         //std::cout << "Constructor\n";
         user_count++;
-        std::cout << "User\n";
+        //std::cout << "User\n";
     }
 
     User::User(std::string first_name, std::string last_name, std::string status)//if you're using a custom constructor, and don't define a default constructor, then calling the default constructor will produce an error.
@@ -47,6 +47,10 @@ private:
     {
         //std::cout << "Desctructor\n";
         user_count--;
+    }
+    void User::output()
+    {
+        std::cout << "I am a user\n";
     }
     void User::set_status(std::string status)
     {

@@ -1,10 +1,10 @@
 #include "teacher.h"
 
 void Teacher::output() {
-	std::cout << "output\n";
+	std::cout << "I am a teacher\n";
 }
 
 Teacher::Teacher()
 {
-	std::cout << "Teacher\n";
+	//std::cout << "Teacher\n";
 }

@@ -2,10 +2,24 @@
 #include <string>
 #include "user.h"
 #include "teacher.h"
+#include "student.h"
 
+void do_something(User& user)
+{
+    user.output();
+}
 
 int main()
 {
+
+    Teacher teacher;
+    Student student;
+    User& u1 = teacher;
+    User& u2 = student;
+    //u1.output();
+    //u2.output();
+    do_something(u1);
+    do_something(u2);
 
  //   User user;
 
@@ -17,11 +31,12 @@ int main()
   //  std::cout << user << std::endl;
     //output_status(user);
 
-    Teacher teacher;
+    
+    /*
     teacher.first_name = "dude";
     std::cout << teacher.first_name << std::endl;
     teacher.output();
-
+    */
 
 
 

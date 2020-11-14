@@ -26,6 +26,7 @@ public:
     User(std::string first_name, std::string last_name, std::string status);//if you're using a custom constructor, and don't define a default constructor, then calling the default constructor will produce an error.
     
     ~User();
+    virtual void output(); //virtual keyword means we can override it in the subclasses
     void set_status(std::string status);
     //std::ostream& operator<<(std::ostream& output, const User user);
     friend void output_status(User user);
