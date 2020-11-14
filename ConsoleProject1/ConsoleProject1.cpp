@@ -23,7 +23,32 @@ public:
     std::string get_status() {
         return status;
     }
-
+    
+    User() //default constructor is the one with no parameters, you can edit it by explicitly writing it out and adding further code to execute, as done here.
+    {
+        std::cout << "Constructor\n";
+    }
+    
+    User(std::string first_name, std::string last_name, std::string status)//if you're using a custom constructor, and don't define a default constructor, then calling the default constructor will produce an error.
+    {
+        this->first_name = first_name;
+        this->last_name = last_name;
+        this->status = status;
+    }
+    ~User()
+    {
+        std::cout << "Desctructor\n";
+    }
+    void set_status(std::string status)
+    {
+        if (status == "Gold" || status == "Silver" || status == "Bronze") {
+            this->status = status;
+        }
+        else {
+            this->status = "No status";
+        }
+        
+    }
 };
 
 int add_user_if_not_exist(std::vector<User> users, User user) {
@@ -41,11 +66,22 @@ int add_user_if_not_exist(std::vector<User> users, User user) {
 
 int main()
 {
+    User me;
+    me.set_status("tacos");
+    std::cout << me.get_status() << std::endl;
+
+    //User me;
+    //User user1("Ehsan", "Ahmed", "silver");
+    //std::cout << user1.get_status() << std::endl;
+    
+    
     //User me;
     //me.first_name = "Ehsan";
     //me.last_name = "Ahmed";
     //me.status = "awesome";
 
+    /*
+    * //used along with the add_user_if_not_exist
     std::vector<User> users;
     User user1, user2, user3;
     
@@ -69,6 +105,8 @@ int main()
     std::cout << add_user_if_not_exist(users, user4) << std::endl;
 
     std::cout << users.size() << std::endl;
+    */
+
 
     //users.push_back(me);
     //users.push_back(User());
