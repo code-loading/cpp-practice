@@ -59,6 +59,10 @@ public:
         }
         
     }
+    friend void output_status(User user);
+    friend std::istream& operator >> (std::istream& input, User& user);
+    friend std::ostream& operator << (std::ostream& output, const User user);
+
 };
 
 int User::user_count = 0;
@@ -78,27 +82,33 @@ int add_user_if_not_exist(std::vector<User> users, User user) {
 
 std::ostream& operator << (std::ostream& output, const User user)
 {
-    output << "First name: " << user.first_name << "\nLast name: " << user.last_name;
+    output << "First name: " << user.first_name << "\nLast name: " << user.last_name << "\nStatus: " << user.status;
     return output;
 }
 
 std::istream& operator >> (std::istream& input, User &user)
 {
-    input >> user.first_name >> user.last_name;
+    input >> user.first_name >> user.last_name>>user.status;
     return input;
+}
+
+void output_status(User user)
+{
+    std::cout << user.status << std::endl;
 }
 
 int main()
 {
 
     User user;
+
     std::cin >> user;
     /*
     user.first_name = "Ehsan";
     user.last_name = "Ahmed";
     */
     std::cout << user << std::endl;
-
+    //output_status(user);
 
 
 
