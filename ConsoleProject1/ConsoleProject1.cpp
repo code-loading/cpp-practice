@@ -16,8 +16,14 @@ private:
 */
 class User //default is private for the member values
 {
+    static int user_count;
     std::string status = "Gold"; //assigned a default value
+    
 public:    
+    static int get_user_count() {
+        //std::cout << user_count << std::endl; //don't use this
+        return user_count;
+    }
     std::string first_name;
     std::string last_name;
     std::string get_status() {
@@ -26,7 +32,8 @@ public:
     
     User() //default constructor is the one with no parameters, you can edit it by explicitly writing it out and adding further code to execute, as done here.
     {
-        std::cout << "Constructor\n";
+        //std::cout << "Constructor\n";
+        user_count++;
     }
     
     User(std::string first_name, std::string last_name, std::string status)//if you're using a custom constructor, and don't define a default constructor, then calling the default constructor will produce an error.
@@ -34,10 +41,12 @@ public:
         this->first_name = first_name;
         this->last_name = last_name;
         this->status = status;
+        user_count++;
     }
     ~User()
     {
-        std::cout << "Desctructor\n";
+        //std::cout << "Desctructor\n";
+        user_count--;
     }
     void set_status(std::string status)
     {
@@ -50,6 +59,8 @@ public:
         
     }
 };
+
+int User::user_count = 0;
 
 int add_user_if_not_exist(std::vector<User> users, User user) {
     for (int i = 0; i < users.size(); i++)
@@ -66,9 +77,17 @@ int add_user_if_not_exist(std::vector<User> users, User user) {
 
 int main()
 {
+    User user, user1, user2, user3, user4;
+    std::cout << User::get_user_count() << std::endl;
+    user.~User();
+    std::cout << User::get_user_count() << std::endl;
+    
+    
+    /*
     User me;
     me.set_status("tacos");
     std::cout << me.get_status() << std::endl;
+    */
 
     //User me;
     //User user1("Ehsan", "Ahmed", "silver");
